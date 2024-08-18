@@ -5,10 +5,15 @@ import { useState } from "react";
 //States
 
 export const ColorApp = () => {
-  const [colorValue, setColorValue] = useState("bg-red-600");
+  const [colorValue, setColorValue] = useState("null");
+
+  const setColor = (colorValue) => {
+    setColorValue(colorValue);
+  };
+  console.log(colorValue);
   return (
     <div className="flex flex-col justify-center">
-      <ColorSelector />
+      <ColorSelector setColor={setColor} />
       <ColorDisplay colorValue={colorValue} />
     </div>
   );
